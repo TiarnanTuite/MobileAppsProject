@@ -1,0 +1,44 @@
+<ion-app>
+  <ion-menu menuId = "main-menu" content-id = "main">
+    <ion-header>
+      <ion-toolbar>
+        <ion-title class="menuFont">menu</ion-title>
+      </ion-toolbar>
+    </ion-header>
+    <ion-content>
+      <ion-list>
+        <ion-menu-toggle>
+          <ion-item routerLink="/home">
+            <ion-icon name="Home" slot="start"></ion-icon>
+            <ion-label class="menuFont">Home</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/log-in">
+            <ion-icon name="alert" slot="start"></ion-icon>
+            <ion-label class="menuFont">Log in</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/sign-up">
+            <ion-icon name="bulb" slot="start"></ion-icon>
+            <ion-label class="menuFont">Sign up</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/cal-calculate">
+            <ion-icon name="Calculator" slot="start"></ion-icon>
+            <ion-label class="menuFont">Calories</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+        <ion-menu-toggle>
+          <ion-item routerLink="/mac-calculate">
+            <ion-icon name="Calculator" slot="start"></ion-icon>
+            <ion-label class="menuFont">Macronutrients</ion-label>
+          </ion-item>
+        </ion-menu-toggle>
+      </ion-list>
+    </ion-content>
+  </ion-menu>
+  <ion-router-outlet id="main"></ion-router-outlet>
+</ion-app>

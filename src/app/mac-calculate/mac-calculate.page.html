@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="font">Macronutrients</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <label class="help" routerLink="/contact">❔</label>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+
+  <h3 class="font">Macronutrient calculator</h3>
+  <form class="userInput">
+    <app-input placeholder="Daily calories depending on goals"></app-input>
+    <app-input placeholder="Weight in lbs"></app-input>
+
+    <ion-button expand="block" shape="round">Calculate Macronutrients</ion-button>
+
+    <p class="font">dont know your calories? Head over to our <label routerLink="/cal-calculate"><u>Calorie calculator</u></label> to find out!</p>
+
+  </form>
+
+</ion-content> 
