@@ -1,5 +1,7 @@
+import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import { FormGroup, FormBuilder } from '@angular/forms'
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-sign-up',
@@ -8,24 +10,27 @@ import { NavController } from '@ionic/angular';
 })
 export class SignUpPage implements OnInit {
 
-  constructor(private navCtrl:NavController) { }
+  public signupForm !: FormGroup;
+  constructor(private formBuilder : FormBuilder, private http : HttpClient, private router : Router) { }
 
-  ngOnInit() {
+  ngOnInit() : void{
+    this.signupForm = this.formBuilder.group({
+      name:[''],
+      email:[''],
+      username:[''],
+      password:['']
+    })
   }
 
-  openHome(){
-    this.navCtrl.navigateBack('/home');
+   signUp(){
+    this.http.post<any>("https://www.jsonblob.com/api/jsonBlob", this.signupForm.value)
+    .subscribe(res=>{
+      alert("you have signed up!");
+      this.signupForm.reset();
+      this.router.navigate(['/log-in']);
+    },err=>{
+      alert("sign up unavailable");
+    })
   }
-  openLogIn(){
-    this.navCtrl.navigateForward('/log-in');
-  }
-  openSignUp(){
-    this.navCtrl.navigateForward('/sign-up');
-  }
-  openCalorie(){
-    this.navCtrl.navigateForward('/cal-calculate');
-  }
-  openMacro(){
-    this.navCtrl.navigateForward('/mac-calculate');
-  }
+
 }

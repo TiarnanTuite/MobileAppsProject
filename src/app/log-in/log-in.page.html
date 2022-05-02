@@ -18,7 +18,7 @@
     <app-input placeholder="Username"></app-input>
     <app-input type="Password" placeholder="Password"></app-input>
 
-    <ion-button expand="block" shape="round">Login</ion-button>
+    <ion-button (click)="verifyJson" expand="block" shape="round">Login</ion-button>
 
     <p class="font">dont have an account? Sign up <label routerLink="/sign-up"><u>Here</u></label>.</p>
   </form>

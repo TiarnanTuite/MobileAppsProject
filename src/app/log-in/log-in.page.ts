@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { NavController } from '@ionic/angular';
+import {MembersService} from '../Services/members.service';
 
 @Component({
   selector: 'app-log-in',
@@ -8,24 +8,20 @@ import { NavController } from '@ionic/angular';
 })
 export class LogInPage implements OnInit {
 
-  constructor(private navCtrl:NavController) { }
+  Members:any = [];
+  password:any = [];
 
-  ngOnInit() {
+  constructor(private service: MembersService){
+
   }
 
-  openHome(){
-    this.navCtrl.navigateBack('/home');
+  ngOnInit() { 
+     this.service.GetMemberData().subscribe( (data)=>{
+        this.Members = data.Members;
+        console.log(this.Members);
+     } );
   }
-  openLogIn(){
-    this.navCtrl.navigateForward('/log-in');
-  }
-  openSignUp(){
-    this.navCtrl.navigateForward('/sign-up');
-  }
-  openCalorie(){
-    this.navCtrl.navigateForward('/cal-calculate');
-  }
-  openMacro(){
-    this.navCtrl.navigateForward('/mac-calculate');
+
+  verifyJson(){
   }
 }

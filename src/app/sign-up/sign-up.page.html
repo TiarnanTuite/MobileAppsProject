@@ -13,14 +13,14 @@
 <ion-content [fullscreen]="true">
 
   <h3 class="font">Create account:</h3>
-  <form class="userInput">
-    <app-input placeholder="Name"></app-input>
-    <app-input placeholder="Email"></app-input>
-    <app-input placeholder="Username"></app-input>
-    <app-input type="Password" placeholder="Password"></app-input>
+  <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="userInput">
+    <app-input type="text" placeholder="Name" formControlName="name"></app-input>
+    <app-input type="text" placeholder="Email" formControlName="email"></app-input>
+    <app-input type="text" placeholder="Username" formControlName="username"></app-input>
+    <app-input type="Password" placeholder="Password" formControlName="password"></app-input>
     <app-input type="Password" placeholder="Confirm Password"></app-input>
 
-    <ion-button expand="block" shape="round">Sign up</ion-button>
+    <ion-button type="submit" expand="block" shape="round">Sign up</ion-button>
 
   </form>
 
