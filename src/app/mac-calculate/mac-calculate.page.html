@@ -1,3 +1,4 @@
+<!-- header for each page -->
 <ion-header>
   <ion-toolbar>
     <ion-title class="font">Macronutrients</ion-title>
@@ -13,14 +14,18 @@
 <ion-content [fullscreen]="true">
 
   <h3 class="font">Macronutrient calculator</h3>
-  <form class="userInput">
-    <app-input placeholder="Daily calories depending on goals"></app-input>
-    <app-input placeholder="Weight in lbs"></app-input>
 
-    <ion-button expand="block" shape="round">Calculate Macronutrients</ion-button>
-
+  <!-- allows for user input and uses ngModel -->
+  <div class="userInput">
+    <p class="font">Get your calories from the Calorie Calculator!</p>	
+    <p class="font">Subtract 500 to loose weight!</p>
+    <p class="font">Add 500 to gain weight!</p>
+    <ion-input placeholder="Calories depending on goals" type="number" [(ngModel)]="calorieGoals"></ion-input> 
+    <ion-input placeholder="Weight in pounds" type="number" [(ngModel)]="weight"></ion-input> 
+    <ion-button (click)="calculateMacro()" expand="block" shape="round">Calculate</ion-button>
     <p class="font">dont know your calories? Head over to our <label routerLink="/cal-calculate"><u>Calorie calculator</u></label> to find out!</p>
+  </div>
 
-  </form>
+    
 
 </ion-content> 

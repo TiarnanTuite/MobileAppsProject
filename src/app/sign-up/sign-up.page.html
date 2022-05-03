@@ -1,3 +1,4 @@
+<!-- header for each page -->
 <ion-header>
   <ion-toolbar>
     <ion-title class="font">Sign up</ion-title>
@@ -14,10 +15,10 @@
 
   <h3 class="font">Create account:</h3>
   <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="userInput">
-    <app-input type="text" placeholder="Name" formControlName="name"></app-input>
-    <app-input type="text" placeholder="Email" formControlName="email"></app-input>
-    <app-input type="text" placeholder="Username" formControlName="username"></app-input>
-    <app-input type="Password" placeholder="Password" formControlName="password"></app-input>
+    <app-input formControlName="name" type="text" placeholder="Name"></app-input>
+    <app-input formControlName="email" type="email" placeholder="Email"></app-input>
+    <app-input formControlName="username" type="text" placeholder="Username"></app-input>
+    <app-input formControlName="password" type="Password" placeholder="Password"></app-input>
     <app-input type="Password" placeholder="Confirm Password"></app-input>
 
     <ion-button type="submit" expand="block" shape="round">Sign up</ion-button>

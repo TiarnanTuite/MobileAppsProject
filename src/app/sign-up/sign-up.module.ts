@@ -10,6 +10,7 @@ import { SignUpPageRoutingModule } from './sign-up-routing.module';
 import { SignUpPage } from './sign-up.page';
 import { InputModule } from '../input/input.module';
 
+//needed imports
 @NgModule({
   imports: [
     CommonModule,

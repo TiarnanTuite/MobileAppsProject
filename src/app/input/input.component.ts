@@ -5,13 +5,17 @@ import { Component, Input, OnInit } from '@angular/core';
   templateUrl: './input.component.html',
   styleUrls: ['./input.component.scss'],
 })
-export class InputComponent {
+export class InputComponent implements OnInit{
 
-  @Input() type: any;
-  @Input() placeholder: any;
-  
+  //declaring input types
+  @Input() formControlName: any;
+  @Input() type: String;
+  @Input() placeholder: String;
+
   constructor() { }
 
- 
+ ngOnInit(){
+   
+ }
 
 }

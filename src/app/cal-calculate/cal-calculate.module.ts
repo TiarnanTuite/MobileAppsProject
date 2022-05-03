@@ -9,6 +9,7 @@ import { CalCalculatePageRoutingModule } from './cal-calculate-routing.module';
 import { CalCalculatePage } from './cal-calculate.page';
 import { InputModule } from '../input/input.module';
 
+//needed imports
 @NgModule({
   imports: [
     CommonModule,

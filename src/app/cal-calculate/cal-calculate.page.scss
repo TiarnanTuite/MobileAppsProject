@@ -1,8 +1,18 @@
+// css for whole page
 ion-content{
   --background: #f5f5f3;
 }
+ion-input{
+  //ui for input boxes
+  margin-top: 5px;
+  border-radius: 40px;
+  height: 55px;
+  box-shadow: 1px 5px 5px 0px rgba(0, 0, 0, 0.08);
+  --highlight-height: 0px;
+}
   
 .font {
+  //font for all pages
   font-family: 'Oswald';
   text-align: center;
 }
@@ -14,5 +24,12 @@ ion-content{
 .gender{
   padding: 4px;
   border-radius: 50px;
+}
+.userInput{
+  margin-top: 25px;
+  padding-left: 10px;
+  padding-right: 10px;
+  height: 30px;
+  font-family: 'Oswald';
 }
   

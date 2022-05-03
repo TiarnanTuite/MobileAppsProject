@@ -5,7 +5,7 @@ import { IonicModule } from "@ionic/angular";
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-
+//needed imports
 @NgModule({
     declarations: [InputComponent],
     imports: [CommonModule, IonicModule, ReactiveFormsModule, FormsModule, HttpClientModule],

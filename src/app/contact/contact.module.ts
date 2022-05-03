@@ -8,6 +8,7 @@ import { ContactPageRoutingModule } from './contact-routing.module';
 
 import { ContactPage } from './contact.page';
 
+//needed imports
 @NgModule({
   imports: [
     CommonModule,

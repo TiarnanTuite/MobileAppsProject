@@ -1,15 +1,19 @@
+<!-- header for each page -->
 <ion-header>
   <ion-toolbar>
     <ion-title class="font">Home page</ion-title>
     <ion-buttons slot="start">
+      <!-- menu button at start slot -->
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="end">
+      <!-- help symbol at end slot -->
       <label class="help" routerLink="/contact">❔</label>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
+<!-- basic home page with logo  -->
 <ion-content [fullscreen]="true" class="bgColor">
 
   <h3 class="font">Welcome to MyFitnessApp!</h3>

@@ -1,3 +1,4 @@
+<!-- header for all pages -->
 <ion-header>
   <ion-toolbar>
     <ion-title class="font">Calories</ion-title>
@@ -13,23 +14,16 @@
 <ion-content [fullscreen]="true">
 
   <h3 class="font">Calculate your daily calories:</h3>
-
-  <form class="userInput">
-    <ion-item>
-      <ion-radio class="gender" value="Male"></ion-radio>
-      <label class="font">Male</label>
-      <ion-radio class="gender" value="Female"></ion-radio>
-      <label class="font">Female</label>
-    </ion-item>
-
-    <app-input placeholder="Age"></app-input>
-    <app-input placeholder="Height (cm)"></app-input>
-    <app-input placeholder="Weight (kg)"></app-input>
+ 
+  <!-- allows for user input and use ngModel -->
+  <div class="userInput">
+    <ion-input placeholder="'Male' or 'Female'" type="text" [(ngModel)]="gender"></ion-input> 
+    <ion-input placeholder="Age" type="number" [(ngModel)]="age"></ion-input> 
+    <ion-input placeholder="Height (Inches)" type="number" [(ngModel)]="height"></ion-input>
+    <ion-input placeholder="Weight (pounds)" type="number" [(ngModel)]="weight"></ion-input>
     <label class="font">Excersise level (very light - very heavy)</label>
-    <app-input placeholder="Input (1-5)"></app-input>
-
-    <ion-button expand="block" shape="round">Calculate</ion-button>
-
-  </form>
+    <ion-input placeholder="Input (1-5)" type="number" [(ngModel)]="activity"></ion-input>
+    <ion-button (click)="calculateCals()" expand="block" shape="round">Calculate</ion-button>
+  </div>
 
 </ion-content> 
