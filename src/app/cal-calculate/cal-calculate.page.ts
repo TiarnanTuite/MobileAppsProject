@@ -59,29 +59,39 @@ export class CalCalculatePage implements OnInit{
     if(this.activity == 1)
     {
       this.maintenanceCals = (this.BMR * 1.2);
+      this.gainWeight = (this.maintenanceCals + 500);
+      this.loseWeight = (this.maintenanceCals - 500);
     }
     else if(this.activity == 2)
     {
       this.maintenanceCals = (this.BMR * 1.375);
+      this.gainWeight = (this.maintenanceCals + 500);
+      this.loseWeight = (this.maintenanceCals - 500);
     }
     else if(this.activity == 3)
     {
       this.maintenanceCals = (this.BMR * 1.55);
+      this.gainWeight = (this.maintenanceCals + 500);
+      this.loseWeight = (this.maintenanceCals - 500);
     }
     else if(this.activity == 4)
     {
       this.maintenanceCals = (this.BMR * 1.725);
+      this.gainWeight = (this.maintenanceCals + 500);
+      this.loseWeight = (this.maintenanceCals - 500);
     }
     else if(this.activity == 5)
     {
       this.maintenanceCals = (this.BMR * 1.9);
+      this.gainWeight = (this.maintenanceCals + 500);
+      this.loseWeight = (this.maintenanceCals - 500);
     }
     else 
     {
       alert("Please enter 1- 5.");
     }
 
-    alert(this.maintenanceCals);
+    alert("Your maintenance calories are: " + this.maintenanceCals.toFixed(0) + "\nYour calories to loose weight are: " + this.loseWeight.toFixed(0) + "\nYour calories to gain weight are: " + this.gainWeight.toFixed(0));
   }
 
   ngOnInit(){

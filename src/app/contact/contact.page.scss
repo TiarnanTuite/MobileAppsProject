@@ -1,7 +1,15 @@
 //font and image css
+ion-content{
+  // background Color - blue purple gradient
+ ---transform: : translate(-50%, 50%);
+ --background:  hsla(205, 46%, 30%, 1);
+ --background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+ }
+ 
 .font {
   font-family: 'Oswald';
   text-align: center;
+  color: white;
   }
 
 .help{
@@ -9,10 +17,10 @@
 }
 
 .img1 {
+  border-radius: 100px;
   display: block;
-  margin-top: auto;
   margin-left: auto;
   margin-right: auto;
   width: 150px;
-  height: 125px;
+  height: 145px;
 }

@@ -1,7 +1,7 @@
 <!-- header for each page -->
 <ion-header>
   <ion-toolbar>
-    <ion-title class="font">Sign up</ion-title>
+    <ion-title style="color: black" class="font">Sign up</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -12,14 +12,15 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
-  <h3 class="font">Create account:</h3>
+ 
+  <!-- using formGroup to link the ts form and formControl name to assign the user input to the json url -->
+  <h3 class="font">Create account:</h3> 
   <form [formGroup]="signupForm" (ngSubmit)="signUp()" class="userInput">
-    <app-input formControlName="name" type="text" placeholder="Name"></app-input>
-    <app-input formControlName="email" type="email" placeholder="Email"></app-input>
-    <app-input formControlName="username" type="text" placeholder="Username"></app-input>
-    <app-input formControlName="password" type="Password" placeholder="Password"></app-input>
-    <app-input type="Password" placeholder="Confirm Password"></app-input>
+    <ion-input formControlName="name" type="text" placeholder="Name"></ion-input>
+    <ion-input formControlName="email" type="email" placeholder="Email"></ion-input>
+    <ion-input formControlName="username" type="text" placeholder="Username"></ion-input>
+    <ion-input formControlName="password" type="Password" placeholder="Password"></ion-input>
+    <ion-input formControlName="confirmPass" type="Password" placeholder="Confirm Password"></ion-input>
 
     <ion-button type="submit" expand="block" shape="round">Sign up</ion-button>
 

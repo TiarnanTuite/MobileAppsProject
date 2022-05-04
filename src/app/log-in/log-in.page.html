@@ -1,24 +1,27 @@
+
+<!-- header for each page -->
 <ion-header>
   <ion-toolbar>
-    <ion-title class="font">Login</ion-title>
+    <ion-title style="color:black" class="font">Login</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
     <ion-buttons slot="end">
       <label class="help" routerLink="/contact">❔</label>
     </ion-buttons>
-  </ion-toolbar>
+  </ion-toolbar> 
 </ion-header>
 
 <ion-content [fullscreen]="true">
 
   <img src="./assets/login.jpg" alt="user!" height="150px" class="img2">
 
-  <form class="userInput">
-    <app-input placeholder="Username"></app-input>
-    <app-input type="Password" placeholder="Password"></app-input>
+  <!-- using formGroup to link the ts form and formControl name to assign the user input to the json url -->
+  <form [formGroup]="loginForm" (ngSubmit)="logIn()" class="userInput">
+    <ion-input formControlName="username" type="text" placeholder="Username"></ion-input>
+    <ion-input formControlName="password" type="password" placeholder="Password"></ion-input>
 
-    <ion-button (click)="verifyJson" expand="block" shape="round">Login</ion-button>
+    <ion-button type="submit" expand="block" shape="round">Login</ion-button>
 
     <p class="font">dont have an account? Sign up <label routerLink="/sign-up"><u>Here</u></label>.</p>
   </form>

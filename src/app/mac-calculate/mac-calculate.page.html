@@ -1,11 +1,11 @@
 <!-- header for each page -->
 <ion-header>
   <ion-toolbar>
-    <ion-title class="font">Macronutrients</ion-title>
+    <ion-title style="Color: black" class="font">Macronutrients</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
-    <ion-buttons slot="end">
+    <ion-buttons slot="end"> 
       <label class="help" routerLink="/contact">❔</label>
     </ion-buttons>
   </ion-toolbar>
@@ -18,8 +18,7 @@
   <!-- allows for user input and uses ngModel -->
   <div class="userInput">
     <p class="font">Get your calories from the Calorie Calculator!</p>	
-    <p class="font">Subtract 500 to loose weight!</p>
-    <p class="font">Add 500 to gain weight!</p>
+    <br>
     <ion-input placeholder="Calories depending on goals" type="number" [(ngModel)]="calorieGoals"></ion-input> 
     <ion-input placeholder="Weight in pounds" type="number" [(ngModel)]="weight"></ion-input> 
     <ion-button (click)="calculateMacro()" expand="block" shape="round">Calculate</ion-button>

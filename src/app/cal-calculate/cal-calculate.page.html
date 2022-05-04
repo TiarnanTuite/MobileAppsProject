@@ -1,7 +1,7 @@
 <!-- header for all pages -->
 <ion-header>
   <ion-toolbar>
-    <ion-title class="font">Calories</ion-title>
+    <ion-title style="color: black" class="font">Calories</ion-title>
     <ion-buttons slot="start">
       <ion-menu-button menu="main-menu"></ion-menu-button>
     </ion-buttons>
@@ -24,6 +24,7 @@
     <label class="font">Excersise level (very light - very heavy)</label>
     <ion-input placeholder="Input (1-5)" type="number" [(ngModel)]="activity"></ion-input>
     <ion-button (click)="calculateCals()" expand="block" shape="round">Calculate</ion-button>
+    <p class="font">You can now head over to our <label routerLink="/mac-calculate"><u>Macronutrient calculator</u></label> to get your exact macros!</p>
   </div>
 
 </ion-content> 

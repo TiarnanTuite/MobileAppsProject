@@ -38,9 +38,8 @@ export class MacCalculatePage implements OnInit {
     this.carbohydrate = (this.remainingCals2 / 4);
 
     //output
-    alert(this.fat);
-    alert(this.protein);
-    alert(this.carbohydrate);
+    alert("Protein: " + this.protein.toFixed(0) + "g\nFats: " + this.fat.toFixed(0) + "g\nCarbohydrates: " + this.carbohydrate.toFixed(0) + "g");
+    
   }
 
   ngOnInit() {
