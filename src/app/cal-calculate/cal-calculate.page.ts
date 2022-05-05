@@ -1,4 +1,5 @@
 import { Component, OnInit} from '@angular/core';
+import {AlertController} from '@ionic/angular'
 
 @Component({
   selector: 'app-cal-calculate',
@@ -26,10 +27,10 @@ export class CalCalculatePage implements OnInit{
   gainWeight : number;
   loseWeight : number;
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
 
   //method to calculate calories
-  calculateCals(){
+  async calculateCals(){
 
     // different calculations for men and women
     if(this.gender == 'Male' || this.gender == 'male'){
@@ -52,7 +53,15 @@ export class CalCalculatePage implements OnInit{
       this.BMR = (this.genderMath + this.weightMath + this.heightMath - this.ageMath);
     }
     else{
-      alert("please enter 'Male' or'Female'")
+      //creating the alert
+      const alertGender = await this.alertController.create({
+        header: 'Incorrect Input!',
+        message: 'Please enter "Male" or "Female"',
+        buttons: ['OK']
+      });
+      
+      //presenting the variable storing the alert
+      await alertGender.present();
     }
 
     //including activity level to give calorie intake from bmr
@@ -88,10 +97,27 @@ export class CalCalculatePage implements OnInit{
     }
     else 
     {
-      alert("Please enter 1- 5.");
+      //creating the alert
+      const alertActivity = await this.alertController.create({
+        header: 'Incorrect Input!',
+        message: 'Please enter (1 - 5)',
+        buttons: ['OK']
+      });
+      
+      //presenting the variable storing the alert
+      await alertActivity.present();
     }
 
-    alert("Your maintenance calories are: " + this.maintenanceCals.toFixed(0) + "\nYour calories to loose weight are: " + this.loseWeight.toFixed(0) + "\nYour calories to gain weight are: " + this.gainWeight.toFixed(0));
+    //creating the alert
+    const alertCalories = await this.alertController.create({
+      header: 'Here are your calories',
+      message: 'Maintain Weight: ' + this.maintenanceCals.toFixed(0) + '<br>Lose weight: ' + this.loseWeight.toFixed(0)  + '<br>Gain weight: ' + this.gainWeight.toFixed(0),
+      buttons: ['OK']
+    });
+
+    //presenting the variable storing the alert
+    await alertCalories.present();
+  
   }
 
   ngOnInit(){

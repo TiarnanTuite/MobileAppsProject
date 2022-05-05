@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {AlertController} from '@ionic/angular'
 
 @Component({
   selector: 'app-mac-calculate',
@@ -19,9 +20,9 @@ export class MacCalculatePage implements OnInit {
   fat : any;
   carbohydrate : any;
 
-  constructor() { }
+  constructor(public alertController: AlertController) { }
 
-  calculateMacro(){
+  async calculateMacro(){
 
     //1g of protein per pound of body weight
     this.protein = (this.weight * 1);
@@ -38,8 +39,14 @@ export class MacCalculatePage implements OnInit {
     this.carbohydrate = (this.remainingCals2 / 4);
 
     //output
-    alert("Protein: " + this.protein.toFixed(0) + "g\nFats: " + this.fat.toFixed(0) + "g\nCarbohydrates: " + this.carbohydrate.toFixed(0) + "g");
-    
+    //creating the alert
+    const alertMacros = await this.alertController.create({
+      header: 'Here are your Macros',
+      message: 'Protein: ' + this.protein.toFixed(0) + '<br>Fats: ' + this.fat.toFixed(0) + '<br>Carbohydrates: ' + this.carbohydrate.toFixed(0),
+      buttons: ['OK']
+    });
+    //presenting the variable storing the alert
+    await alertMacros.present();
   }
 
   ngOnInit() {
