@@ -1,5 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {AlertController} from '@ionic/angular'
+import { Storage } from '@ionic/storage-angular';
 
 @Component({
   selector: 'app-cal-calculate',
@@ -9,7 +10,7 @@ import {AlertController} from '@ionic/angular'
 export class CalCalculatePage implements OnInit{
 
   //variables using ngModel
-  gender: string; 
+  gender: number = 0; 
   age : number;
   height : number;
   weight : number;
@@ -27,13 +28,13 @@ export class CalCalculatePage implements OnInit{
   gainWeight : number;
   loseWeight : number;
 
-  constructor(public alertController: AlertController) { }
+  constructor(public alertController: AlertController, private storage: Storage) { }
 
   //method to calculate calories
   async calculateCals(){
 
     // different calculations for men and women
-    if(this.gender == 'Male' || this.gender == 'male'){
+    if(this.gender == 1 ){
       //math to get mens basic metabolic rate(BMR)
       this.genderMath = 66;
       this.weightMath = (6.23 * this.weight);
@@ -43,7 +44,7 @@ export class CalCalculatePage implements OnInit{
       this.BMR = (this.genderMath + this.weightMath + this.heightMath - this.ageMath);
      
     }
-    else if(this.gender == 'Female' || this.gender == 'female'){
+    else if(this.gender == 2){
        //math to get womens basic metabolic rate(BMR)
       this.genderMath = 655;
       this.weightMath = (4.35 * this.weight);
@@ -117,6 +118,15 @@ export class CalCalculatePage implements OnInit{
 
     //presenting the variable storing the alert
     await alertCalories.present();
+
+    //store the input to disk - data persistence
+    this.storage.create()
+    .then(()=>{
+      this.storage.set("Gender", this.gender)
+      .then(()=>{console.log(this.gender)})//check in console
+      .catch();
+    })
+    .catch(); 
   
   }
 

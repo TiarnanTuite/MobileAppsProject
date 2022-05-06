@@ -15,6 +15,17 @@ ion-input{
   --highlight-height: 0px;
 } 
 
+ion-item{
+  //ui for input boxes
+  --background: rgb(227, 244, 242);
+  margin-top: 5px;
+  border-radius: 10px;
+  height: 40px;
+  box-shadow: 1px 5px 5px 0px rgba(0, 0, 0, 0.08);
+  --highlight-height: 0px;
+
+}
+
 ion-button{
   margin-top: 20px;
 }

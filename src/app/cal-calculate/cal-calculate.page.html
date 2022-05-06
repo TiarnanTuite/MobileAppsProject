@@ -12,12 +12,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-
+ 
   <h3 class="font">Calculate your daily calories:</h3>
  
   <!-- allows for user input and use ngModel -->
   <div class="userInput">
-    <ion-input placeholder="'Male' or 'Female'" type="text" [(ngModel)]="gender"></ion-input> 
+
+    <!-- radio button for male/female -->
+    <ion-radio-group [(ngModel)]="gender">
+      <ion-item>
+        <ion-label>Male</ion-label>
+        <ion-radio slot="end" value="1"></ion-radio>
+      </ion-item>
+      <ion-item>
+        <ion-label>Female</ion-label>
+        <ion-radio slot="end" value="2"></ion-radio>
+      </ion-item>
+    </ion-radio-group>
+    <!--input and send using ngModel-->
     <ion-input placeholder="Age" type="number" [(ngModel)]="age"></ion-input> 
     <ion-input placeholder="Height (Inches)" type="number" [(ngModel)]="height"></ion-input>
     <ion-input placeholder="Weight (pounds)" type="number" [(ngModel)]="weight"></ion-input>
