@@ -1,0 +1,28 @@
+<!-- header for each page -->
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="color: black;" class="font">Members</ion-title>
+    <ion-buttons slot="start">
+      <!-- menu button at start slot -->
+      <ion-menu-button menu="main-menu"></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <!-- help symbol at end slot -->
+      <label class="help" routerLink="/contact">❔</label>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <!-- search bar using ngModel  -->
+  <ion-searchbar  [(ngModel)]="term" showCancelButton="focus"></ion-searchbar>
+  <ion-list>
+    <!-- filtering the list using plugin -->
+    <ion-item *ngFor="let item of list |filter:term">
+      <ion-label>
+        <h2>{{item.name}}</h2>
+        <p>{{item.email}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>

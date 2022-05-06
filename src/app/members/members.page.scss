@@ -1,0 +1,33 @@
+    ion-item{
+    // background Color - blue purple gradient
+   ---transform: : translate(-50%, 50%);
+   --background:  hsla(205, 46%, 30%, 1);
+   --background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+  
+   h2{
+        font-family: 'Oswald';
+       color: white;
+   }
+
+   p{
+        font-family: 'Oswald';
+       color: rgb(185, 167, 167);
+   }
+   }
+
+   ion-content{
+    // background Color - blue purple gradient
+   ---transform: : translate(-50%, 50%);
+   --background:  hsla(205, 46%, 30%, 1);
+   --background: linear-gradient(90deg, hsla(205, 46%, 30%, 1) 0%, hsla(260, 29%, 36%, 1) 100%);
+   }
+
+   .font {
+    font-family: 'Oswald';
+    text-align: center;
+    color: white;
+    }
+  
+  .help{
+    padding: 12px;
+  }
